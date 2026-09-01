@@ -80,17 +80,17 @@ jobs:
             exit 1
           fi
 
-      - name: Install gh extension 'thetechcollective/gh-rotator'
-        # Visit https://github.com/thetechcollective/gh-rotator for more information
+      - name: Install gh extension 'Arla-OMB/gh-rotator'
+        # Visit https://github.com/Arla-OMB/gh-rotator for more information
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #standard token is fine for installing the extension
         run: |
           if [[ -n "${{ inputs.rotator_pin }}" ]]; then
-            gh extension install thetechcollective/gh-rotator --pin ${{ inputs.rotator_pin }}
-            echo "Installed thetechcollective/gh-rotator pinned to: ${{ inputs.rotator_pin }}" >> $GITHUB_STEP_SUMMARY
+            gh extension install Arla-OMB/gh-rotator --pin ${{ inputs.rotator_pin }}
+            echo "Installed Arla-OMB/gh-rotator pinned to: ${{ inputs.rotator_pin }}" >> $GITHUB_STEP_SUMMARY
           else
-            gh extension install thetechcollective/gh-rotator
-            echo "Installed thetechcollective/gh-rotator from main/LATEST" >> $GITHUB_STEP_SUMMARY
+            gh extension install Arla-OMB/gh-rotator
+            echo "Installed Arla-OMB/gh-rotator from main/LATEST" >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Determine configuration and lock manifest
